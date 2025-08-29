@@ -1483,6 +1483,11 @@
 						"sampleRequest": "%copilot.workspace.fix.sampleRequest%"
 					},
 					{
+						"name": "enhancePrompt",
+						"description": "%copilot.workspace.enhancePrompt.description%",
+						"sampleRequest": "%copilot.workspace.enhancePrompt.sampleRequest%"
+					},
+					{
 						"name": "new",
 						"description": "%copilot.workspace.new.description%",
 						"sampleRequest": "%copilot.workspace.new.sampleRequest%",
@@ -1778,6 +1783,13 @@
 				"command": "github.copilot.chat.review",
 				"title": "%github.copilot.command.reviewAndComment%",
 				"enablement": "github.copilot.chat.reviewSelection.enabled && !github.copilot.interactiveSession.disabled",
+				"category": "GitHub Copilot"
+			},
+			{
+				"command": "github.copilot.chat.enhancePrompt",
+				"title": "%github.copilot.command.enhancePrompt%",
+				"icon": "$(sparkle)",
+				"enablement": "!github.copilot.interactiveSession.disabled",
 				"category": "GitHub Copilot"
 			},
 			{
@@ -3061,6 +3073,10 @@
 				},
 				{
 					"command": "github.copilot.chat.review",
+					"when": "!github.copilot.interactiveSession.disabled"
+				},
+				{
+					"command": "github.copilot.chat.enhancePrompt",
 					"when": "!github.copilot.interactiveSession.disabled"
 				},
 				{

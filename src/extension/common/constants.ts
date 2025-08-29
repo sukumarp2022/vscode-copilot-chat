@@ -31,7 +31,8 @@ export const enum Intent {
 	SearchPanel = 'searchPanel',
 	SearchKeywords = 'searchKeywords',
 	AskAgent = 'askAgent',
-	ChatReplay = 'chatReplay'
+	ChatReplay = 'chatReplay',
+	EnhancePrompt = 'enhancePrompt'
 }
 
 export const GITHUB_PLATFORM_AGENT = 'github.copilot-dynamic.platform';
@@ -48,6 +49,7 @@ export const agentsToCommands: Partial<Record<Intent, Record<string, Intent>>> =
 		'newNotebook': Intent.NewNotebook,
 		'semanticSearch': Intent.SemanticSearch,
 		'setupTests': Intent.SetupTests,
+		'enhancePrompt': Intent.EnhancePrompt,
 	},
 	[Intent.VSCode]: {
 		'search': Intent.Search,
