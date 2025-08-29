@@ -334,6 +334,16 @@ ${message}`,
 	disposables.add(vscode.commands.registerCommand('github.copilot.chat.generateTests', doGenerateTests));
 	disposables.add(vscode.commands.registerCommand('github.copilot.chat.fix', doFix));
 	disposables.add(vscode.commands.registerCommand('github.copilot.chat.generateAltText', doGenerateAltText));
+	
+	const doEnhancePrompt = async () => {
+		// For now, let's implement this as a chat message that demonstrates the enhancement
+		// The user can invoke this command to get guidance on prompt enhancement
+		const message = `@${workspaceIntentId} /${Intent.EnhancePrompt} Please help me enhance my prompt for better results`;
+		vscode.commands.executeCommand('workbench.panel.chat.view.copilot.focus');
+		vscode.commands.executeCommand('workbench.action.chat.open', { query: message });
+	};
+	
+	disposables.add(vscode.commands.registerCommand('github.copilot.chat.enhancePrompt', doEnhancePrompt));
 	// register code actions
 	disposables.add(vscode.languages.registerCodeActionsProvider('*', instaService.createInstance(QuickFixesProvider), {
 		providedCodeActionKinds: QuickFixesProvider.providedCodeActionKinds,

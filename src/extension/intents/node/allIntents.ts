@@ -12,6 +12,7 @@ import { ChatReplayIntent } from './chatReplayIntent';
 import { InlineDocIntent } from './docIntent';
 import { EditCodeIntent } from './editCodeIntent';
 import { EditCode2Intent } from './editCodeIntent2';
+import { EnhancePromptIntent } from './enhancePromptIntent';
 import { ExplainIntent } from './explainIntent';
 import { FixIntent } from './fixIntent';
 import { GenerateCodeIntent } from './generateCodeIntent';
@@ -55,5 +56,6 @@ IntentRegistry.setIntents([
 	new SyncDescriptor(SearchKeywordsIntent),
 	new SyncDescriptor(AskAgentIntent),
 	new SyncDescriptor(NotebookEditorIntent),
-	new SyncDescriptor(ChatReplayIntent)
+	new SyncDescriptor(ChatReplayIntent),
+	new SyncDescriptor(EnhancePromptIntent)
 ]);
